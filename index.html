@@ -18,8 +18,19 @@
   <body>
     <!-- JQuery -->
     <main>
-      <div class="button-holder"></div>
-      <div class="giph-holder"></div>
+      <div class="row">
+        <div class="col-9">
+          <div class="button-holder"></div>
+          <div class="giph-holder"></div>
+        </div>
+        <div class="col-3">
+          <form action="/action_page.php">
+            New Button:
+            <input id="input-field" type="text" name="lname" /><br />
+            <input id="input-button" type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Local JS -->
