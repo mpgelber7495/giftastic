@@ -13,6 +13,10 @@ function addButtons() {
 }
 addButtons();
 
+$(".actor-button").click(function(event) {
+  addGiphsToDOM($(this).val());
+});
+
 function addGiphsToDOM(searchTerm) {
   var apiURL = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=10&rating=r&&api_key=2TnlxruJDjOfB4XdGy6PoxtRgiJUgXZM`;
   $.ajax(apiURL).then(function(response) {
