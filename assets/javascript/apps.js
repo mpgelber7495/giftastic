@@ -6,7 +6,9 @@ function addGiphsToDOM(searchTerm) {
     var apiResponse = response.data;
     console.log(apiResponse);
     for (var i = 0; i < apiResponse.length; i++) {
-      $(".giph-holder").append(`<img src ="${apiResponse[i]["embed_url"]}">`);
+      $(".giph-holder").append(
+        `<img src ="${apiResponse[i]["images"]["fixed_height_small"]["url"]}">`
+      );
     }
   });
 }
