@@ -8,6 +8,8 @@ function addButtons() {
     var button = $("<button>");
     button.attr("value", actors[i]);
     button.addClass("actor-button");
+    button.addClass("mx-2");
+    button.addClass("my-2");
     button.text(actors[i]);
     buttonHolder.append(button);
   }
@@ -29,7 +31,7 @@ function addGiphsToDOM(searchTerm) {
     console.log(apiResponse);
     for (var i = 0; i < apiResponse.length; i++) {
       $(".giph-holder").append(
-        `<img class = "giph-image" data-motion = "still" id = ${i} src ="${apiResponse[i]["images"]["fixed_height_small_still"]["url"]}">`
+        `<img class = "giph-image mx-2 my-1" data-motion = "still" id = ${i} src ="${apiResponse[i]["images"]["fixed_height_small_still"]["url"]}">`
       );
     }
   });
