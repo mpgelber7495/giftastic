@@ -16,7 +16,7 @@ h3 {
   text-align: center;
 }
 
-#input-button {
+.buttons {
   color: antiquewhite;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 20px;
@@ -26,10 +26,15 @@ h3 {
   padding-right: 15px;
   border: 3px solid rgb(19, 50, 84);
   margin-top: 10px;
+  margin-left: 10px;
 }
 
-#input-button:hover {
+.buttons:hover {
   background-color: rgb(19, 50, 84);
+}
+
+.clear-storage-button {
+  display: none;
 }
 .stored-info-warning {
   text-align: center;

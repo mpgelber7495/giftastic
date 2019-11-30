@@ -72,5 +72,12 @@ $("#input-button").click(function(event) {
     $(".stored-info-warning").text(
       "You can step away from this page and we'll remember your inputs!"
     );
+    $(".clear-storage-button").show();
   }
 });
+
+function clearMemory() {
+  localStorage.removeItem("localStorageActors");
+  $(".stored-info-warning").text("");
+  addButtons();
+}
