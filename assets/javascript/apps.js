@@ -64,8 +64,13 @@ $(".giph-holder").click(function(event) {
 // Code to add a new button
 $("#input-button").click(function(event) {
   event.preventDefault();
-  var newActor = $("#input-field").val();
-  actors.push(newActor);
-  addButtons();
-  localStorage.setItem("localStorageActors", JSON.stringify(actors));
+  if ($("#input-field").val()) {
+    var newActor = $("#input-field").val();
+    actors.push(newActor);
+    addButtons();
+    localStorage.setItem("localStorageActors", JSON.stringify(actors));
+    $(".stored-info-warning").text(
+      "You can step away from this page and we'll remember your inputs!"
+    );
+  }
 });

@@ -1,3 +1,7 @@
+h3 {
+  font-weight: 800;
+}
+
 .actor-button {
   background-color: rgb(22, 67, 101);
   color: aliceblue;
@@ -26,4 +30,7 @@
 
 #input-button:hover {
   background-color: rgb(19, 50, 84);
+}
+.stored-info-warning {
+  text-align: center;
 }
