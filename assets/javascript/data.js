@@ -5,6 +5,7 @@ function createOriginalActorsArray() {
     "Brad Pitt",
     "John Hamm",
     "Ryan Gosling",
-    ""
+    "Zac Efron",
+    "Ryan Reynolds"
   ];
 }
