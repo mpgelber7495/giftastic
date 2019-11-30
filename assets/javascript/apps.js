@@ -92,4 +92,6 @@ function clearMemory() {
   localStorage.removeItem("localStorageActors");
   $(".stored-info-warning").text("");
   addButtons();
+  $(".giph-holder").html("");
+  $(".clear-storage-button").css("display", "none");
 }
