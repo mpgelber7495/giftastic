@@ -1,11 +1,12 @@
 var searchParam = "matthew McConoughey";
 var apiResponse;
+var actors = createOriginalActorsArray();
 
 function addButtons() {
   if (localStorage.getItem("localStorageActors")) {
     var actorsArr = JSON.parse(localStorage.getItem("localStorageActors"));
   } else {
-    var actorsArr = actors;
+    var actorsArr = createOriginalActorsArray();
   }
   var buttonHolder = $(".button-holder");
   buttonHolder.html("");
@@ -64,18 +65,21 @@ $(".giph-holder").click(function(event) {
 // Code to add a new button
 $("#input-button").click(function(event) {
   event.preventDefault();
+
   if ($("#input-field").val()) {
     var newActor = $("#input-field").val();
     if (localStorage.getItem("localStorageActors")) {
       var actorsHolder = JSON.parse(localStorage.getItem("localStorageActors"));
     } else {
-      actorsHolder = actors;
+      var actorsHolder = actors;
     }
 
     console.log(actorsHolder);
     actorsHolder.push(newActor);
-    addButtons();
+    console.log(actorsHolder);
+
     localStorage.setItem("localStorageActors", JSON.stringify(actorsHolder));
+    addButtons();
     $(".stored-info-warning").text(
       "You can step away from this page and we'll remember your inputs!"
     );
@@ -84,7 +88,7 @@ $("#input-button").click(function(event) {
 });
 
 function clearMemory() {
-  actors = [];
+  actors = createOriginalActorsArray();
   localStorage.removeItem("localStorageActors");
   $(".stored-info-warning").text("");
   addButtons();
