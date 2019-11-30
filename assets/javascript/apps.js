@@ -2,15 +2,20 @@ var searchParam = "matthew McConoughey";
 var apiResponse;
 
 function addButtons() {
+  if (localStorage.getItem("localStorageActors")) {
+    var actorsArr = JSON.parse(localStorage.getItem("localStorageActors"));
+  } else {
+    var actorsArr = actors;
+  }
   var buttonHolder = $(".button-holder");
   buttonHolder.html("");
-  for (var i = 0; i < actors.length; i++) {
+  for (var i = 0; i < actorsArr.length; i++) {
     var button = $("<button>");
-    button.attr("value", actors[i]);
+    button.attr("value", actorsArr[i]);
     button.addClass("actor-button");
     button.addClass("mx-2");
     button.addClass("my-2");
-    button.text(actors[i]);
+    button.text(actorsArr[i]);
     buttonHolder.append(button);
   }
   listenForClicks();
@@ -62,4 +67,5 @@ $("#input-button").click(function(event) {
   var newActor = $("#input-field").val();
   actors.push(newActor);
   addButtons();
+  localStorage.setItem("localStorageActors", JSON.stringify(actors));
 });
