@@ -66,9 +66,16 @@ $("#input-button").click(function(event) {
   event.preventDefault();
   if ($("#input-field").val()) {
     var newActor = $("#input-field").val();
-    actors.push(newActor);
+    if (localStorage.getItem("localStorageActors")) {
+      var actorsHolder = JSON.parse(localStorage.getItem("localStorageActors"));
+    } else {
+      actorsHolder = actors;
+    }
+
+    console.log(actorsHolder);
+    actorsHolder.push(newActor);
     addButtons();
-    localStorage.setItem("localStorageActors", JSON.stringify(actors));
+    localStorage.setItem("localStorageActors", JSON.stringify(actorsHolder));
     $(".stored-info-warning").text(
       "You can step away from this page and we'll remember your inputs!"
     );
@@ -77,6 +84,7 @@ $("#input-button").click(function(event) {
 });
 
 function clearMemory() {
+  actors = [];
   localStorage.removeItem("localStorageActors");
   $(".stored-info-warning").text("");
   addButtons();

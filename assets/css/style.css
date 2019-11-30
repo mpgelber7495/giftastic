@@ -7,6 +7,10 @@ h3 {
   color: aliceblue;
 }
 
+.actor-button:hover {
+  opacity: 0.8;
+}
+
 .giph-image {
   border: 2px solid firebrick;
 }
