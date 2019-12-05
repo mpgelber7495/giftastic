@@ -37,7 +37,7 @@ function addGiphsToDOM(searchTerm) {
     console.log(apiResponse);
     for (var i = 0; i < apiResponse.length; i++) {
       $(".giph-holder").append(
-        `<img class = "giph-image mx-2 my-1" data-motion = "still" id = ${i} src ="${apiResponse[i]["images"]["fixed_height_small_still"]["url"]}">`
+        `<div class = "single-giph-holder"><img class = "giph-image mx-2 my-1" data-motion = "still" id = ${i} src ="${apiResponse[i]["images"]["fixed_height_small_still"]["url"]}"><p class ="rating-holder">rating: ${apiResponse[i]["rating"]}</p></div>`
       );
     }
   });

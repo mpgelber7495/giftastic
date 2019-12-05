@@ -10,9 +10,15 @@ h3 {
 .actor-button:hover {
   opacity: 0.8;
 }
-
+.single-giph-holder {
+  float: left;
+}
 .giph-image {
   border: 2px solid firebrick;
+}
+.rating-holder {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
 }
 
 #input-field {
